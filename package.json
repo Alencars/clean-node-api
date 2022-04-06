@@ -6,6 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix", 
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Alencars/clean-node-api.git"
@@ -17,6 +28,8 @@
   },
   "homepage": "https://github.com/Alencars/clean-node-api#readme",
   "devDependencies": {
-    "standard": "^16.0.4"
+    "lint-staged": "^12.3.7",
+    "standard": "^16.0.4",
+    "husky": "^7.0.4"
   }
 }
